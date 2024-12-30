@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Customers{
+  id              Int     @id @default(autoincrement())
+  customerName    String?
+  customerSite    String?
+  customerContact String?
+  assetHeaders    AssetHeader[] //One-to-many relationship to AssetHeader
+}
+
+model AssetHeader{
+  id                Int @id @default(autoincrement())
+  customerId        Int // Foreign key referencing Customers model
+  assetNumber       String?
+  assetDescription  String?
+  assetSerialNo     String?
+  siteSection       String?
+
+  customer Customers @relation(fields: [customerId], references: [id]) // Foreign Key relationship
+}
