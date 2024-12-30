@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "src": "/createCustomer",
+      "dest": "/"
+    },
+    {
+      "src": "/viewCustomers",
+      "dest": "/"
+    },
+    {
+      "src": "/createAssetHeaders",
+      "dest": "/"
+    },
+    {
+      "src": "/viewAssetHeaders",
+      "dest": "/"
+    }
+  ]
+}
