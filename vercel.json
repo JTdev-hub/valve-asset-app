@@ -3,7 +3,12 @@
   "builds": [
     {
       "src": "src/server/main.ts",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "typescript": {
+          "tsconfig": "./tsconfig.json"
+        }
+      }
     }
   ],
   "routes": [
