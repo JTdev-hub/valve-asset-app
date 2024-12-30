@@ -1,4 +1,23 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/server/main.ts",
+      "use": "@vercel/node",
+      "config": {
+        "typescript": {
+          "tsconfig": "./tsconfig.json"
+        }
+      }
+    },
+    {
+      "src": "vite.config.ts",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "public"
+      }
+    }
+  ],
   "routes": [
     {
       "src": "/createCustomer",
@@ -15,6 +34,10 @@
     {
       "src": "/viewAssetHeaders",
       "dest": "/"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/server/main.ts"
     }
   ]
 }
