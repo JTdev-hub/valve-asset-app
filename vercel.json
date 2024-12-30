@@ -3,12 +3,7 @@
   "builds": [
     {
       "src": "src/server/main.ts",
-      "use": "@vercel/node",
-      "config": {
-        "typescript": {
-          "tsconfig": "./tsconfig.json"
-        }
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -30,7 +25,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/src/server/main.ts"
+      "dest": "/"
     }
   ]
 }
