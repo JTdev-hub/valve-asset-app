@@ -9,13 +9,6 @@
           "tsconfig": "./tsconfig.json"
         }
       }
-    },
-    {
-      "src": "vite.config.ts",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "public"
-      }
     }
   ],
   "routes": [
