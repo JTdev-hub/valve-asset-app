@@ -10,7 +10,7 @@ const prisma = new PrismaClient();
 app.use(express.json());
 app.use(cors());
 
-app.get("/customers", async (req, res) => {
+app.get("/api/customers", async (req, res) => {
   const { id } = req.query;
   const customers = await prisma.customers.findMany({
     where: id ? { id: Number(id) } : undefined,
